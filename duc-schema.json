@@ -91,7 +91,7 @@
       "type": "date"
     },
     "resources": {
-      "description": "Optional list of zero or more resources to which the conditions apply. Specify names, descriptions, references and URI to their data catalogue (DCAT) object.",
+      "description": "Optional list of resources to which the conditions apply. Specify names, descriptions, references and URI to their data catalogue (DCAT) object.",
       "type": "array",
       "items": {
         "type": "object"
