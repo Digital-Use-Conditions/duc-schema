@@ -90,8 +90,8 @@
       "description": "Optional date this DUC profile was most recently updated in ISO 8601 format.",
       "type": "date"
     },
-    "resources": {
-      "description": "Optional list of resources to which the conditions apply. Specify names, descriptions, references and URI to their data catalogue (DCAT) object.",
+    "assets": {
+      "description": "Optional list of assets to which the conditions apply. Specify names, descriptions, references and URI to their asset object (for example DCAT).",
       "type": "array",
       "items": {
         "type": "object"
@@ -106,11 +106,11 @@
           "description": "Required name of the resource.",
           "type": "string"
         },
-        "resourceDescription": {
+        "assetDescription": {
           "description": "Optional description of the resource.",
           "type": "string"
         },
-        "resourceReferences": {
+        "assetReferences": {
           "description": "Optional list of web links to external documents describing the resource(s) this profile applies to, such as publications.",
           "type": "array",
           "items": {
@@ -119,8 +119,8 @@
           },
           "uniqueItems": true
         },
-        "resourceURI": {
-          "description": "Optional URI for the resource DCAT catalogue-level object.",
+        "assetURI": {
+          "description": "Optional URI for the asset catalogue-level object (for example a DCAT object).",
           "type": "string",
           "format": "uri"
         },
