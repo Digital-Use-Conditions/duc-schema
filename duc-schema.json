@@ -99,7 +99,7 @@
       "minItems": 1,
       "uniqueItems": true,
       "required": [
-        "resourceName"
+        "assetName"
       ],
       "properties": {
         "assetName": {
