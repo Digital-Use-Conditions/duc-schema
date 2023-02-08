@@ -102,16 +102,16 @@
         "resourceName"
       ],
       "properties": {
-        "resourceName": {
-          "description": "Required name of the resource.",
+        "assetName": {
+          "description": "Required name of the asset.",
           "type": "string"
         },
         "assetDescription": {
-          "description": "Optional description of the resource.",
+          "description": "Optional description of the asset.",
           "type": "string"
         },
         "assetReferences": {
-          "description": "Optional list of web links to external documents describing the resource(s) this profile applies to, such as publications.",
+          "description": "Optional list of web links to external documents describing the asset(s) this profile applies to, such as publications.",
           "type": "array",
           "items": {
             "type": "string",
