@@ -7,7 +7,7 @@
   ],
   "properties": {
     "conditions": {
-      "description": "A list of use conditions that apply to the resources.",
+      "description": "A list of use conditions that apply to the information or data assets.",
       "type": "array",
       "minItems": 1,
       "items": {
