@@ -7,25 +7,25 @@
   ],
   "properties": {
     "conditions": {
-    "description": "A list of use conditions that apply to the information or data assets.",
-    "type": "array",
-    "minItems": 1,
-    "items": {
-      "type": "object"
-    },
-    "required": [
-      "conditionTermLabel",
-      "rule",
-      "scope"
-    ],
-    "properties": {
-      "conditionTerm": {
-        "label": {
-        "description": "A human readable name of the vocabulary/ontology condition term, such as DUO ‘Disease specific research’.",
-        "type": "string"
-        },
-        "uri": {
-        "description": "A URI to the vocabulary/ontology term, such as DUO URI: ‘http://purl.obolibrary.org/obo/DUO_0000007’.",
+      "description": "A list of use conditions that apply to the information or data assets.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object"
+      },
+      "required": [
+        "conditionTermLabel",
+        "rule",
+        "scope"
+      ],
+      "properties": {
+        "conditionTerm": {
+          "label": {
+            "description": "A human readable name of the vocabulary/ontology condition term, such as DUO ‘Disease specific research’.",
+            "type": "string"
+          },
+          "uri": {
+            "description": "A URI to the vocabulary/ontology term, such as DUO URI: ‘http://purl.obolibrary.org/obo/DUO_0000007’.",
             "type": "string",
             "format": "uri"
           }
