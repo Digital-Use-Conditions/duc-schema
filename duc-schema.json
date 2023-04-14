@@ -32,16 +32,16 @@
         },
         "conditionParameter": {
           "label": {
-            "description": "Optional human readable name of the vocabulary/ontology used as a detail, such as Alzheimer's Disease.",
+            "description": "Optional human readable name of the vocabulary/ontology used as a parameter, such as Alzheimer's Disease, to apply on the conditionTerm.",
             "type": "string"
           },
           "uri": {
-            "description": "Optional URI to the ontology detail term, such as a MONDO URI: ‘http://purl.obolibrary.org/obo/MONDO_0004975’.",
+            "description": "Optional URI to the ontology term for the conditionParameter, such as a MONDO URI: ‘http://purl.obolibrary.org/obo/MONDO_0004975’.",
             "type": "string",
             "format": "uri"
           },
           "value": {
-            "description": "Optional value for the condition detail if any.",
+            "description": "Optional value for the conditionParameter if any.",
             "type": [
               "string",
               "number"
@@ -49,7 +49,7 @@
           }
         },
         "rule": {
-          "description": "The direction to interpret the condition term and detail.",
+          "description": "The direction to interpret the condition term.",
           "type": "string",
           "enum": [
             "Obligatory",
