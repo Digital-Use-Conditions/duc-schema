@@ -17,6 +17,7 @@ A few teams have create DUC profile creation tools so far that are compliant wit
 
 - https://duc.le.ac.uk
 - https://github.com/FrancisJMR/duc-profile-creator/
+- https://irdirc.molgeniscloud.org/
 
 ## License
 The DUC specification comes with the Creative Commons Zero v1.0 Universal (CC0) license: https://github.com/Digital-Use-Conditions/duc-schema/edit/main/LICENSE
