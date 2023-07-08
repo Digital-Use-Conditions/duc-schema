@@ -7,7 +7,7 @@ Hosted by the International Rare Disease Research Consortium (IRDiRC) as a Task 
 
 Using this structure, simple or sophisticated sets of conditions can be designed to make the best use of existing ontology concepts. For instance, resource use that permits general research for a 12 month time limit on use could be expressed as the set of two condition statements:
 - conditionTerm: General Research Use (DUO:0000042), rule: Permitted, scope: Whole of asset
-- conditionTerm: Time limit on use (DUO:0000025), conditionDetail: Month (UO:0000035), conditionDetailValue: 12, rule: Obligated, scope: Whole of asset
+- conditionTerm: Time limit on use (DUO:0000025), rule: Obligated, scope: Whole of asset, conditionParameter: Month (UO:0000035), conditionParameterValue: 12
 
 ## Extending ontologies
 DUC can be used with either free text descriptions of use conditions, but it can also extend existing controlled vocabularies/ontologies to define more detailed terms. For example, ontologies with entities with a web URI can be used such as [DUO](https://www.ebi.ac.uk/ols/ontologies/duo), [ICO](https://www.ebi.ac.uk/ols/ontologies/ico), [SNOMED](https://www.ebi.ac.uk/ols/ontologies/snomed), [DOID](https://www.ebi.ac.uk/ols/ontologies/doid), [UO](https://www.ebi.ac.uk/ols/ontologies/uo), and many others. By adopting controlled terms DUC affords more machine readibility and interpretation to further facilitate data findability and access.
