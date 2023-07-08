@@ -15,7 +15,7 @@ DUC can be used with either free text descriptions of use conditions, but it can
 ## Tools to create DUC profiles
 A few teams have create DUC profile creation tools so far that are compliant with the specification herein.
 
-- https://duc.le.ac.uk
+- https://duc.le.ac.uk (code: https://github.com/CafeVariomeUoL/Duc_Profile)
 - https://github.com/FrancisJMR/duc-profile-creator/
 - https://irdirc.molgeniscloud.org
 - https://ducejprd.le.ac.uk
