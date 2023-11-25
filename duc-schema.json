@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Digital-Use-Conditions/duc-schema/blob/main/duc-schema.json",
+  "$id": "https://github.com/Digital-Use-Conditions/duc-schema/tree/v1.0.0",
   "type": "object",
   "required": [
     "conditions"
