@@ -10,7 +10,9 @@ Using this structure, simple or sophisticated sets of conditions can be designed
 - conditionTerm: Time limit on use (DUO:0000025), rule: Obligated, scope: Whole of asset, conditionParameter: Month (UO:0000035), conditionParameterValue: 12
 
 ## Extending ontologies
-DUC can be used with either free text descriptions of use conditions. It works particularly well with concepts designed as part of the Common Conditions of Use Elements (CCEs). More information about CCEs is available from the [CCEs pre-print](https://doi.org/10.5281/zenodo.8200044).
+DUC can be used with either free text descriptions of use conditions or controlled vocabulary/ontology terms. 
+
+It works particularly well with "non-directional" concepts designed as part of the Common Conditions of Use Elements (CCEs). More information about CCEs is available from the [CCEs pre-print](https://doi.org/10.5281/zenodo.8200044).
 
 But DUC can also extend existing controlled vocabularies/ontologies to define more detailed terms. For example, ontologies with entities with a web URI can be used such as [DUO](https://www.ebi.ac.uk/ols/ontologies/duo), [ICO](https://www.ebi.ac.uk/ols/ontologies/ico), [SNOMED](https://www.ebi.ac.uk/ols/ontologies/snomed), [DOID](https://www.ebi.ac.uk/ols/ontologies/doid), [UO](https://www.ebi.ac.uk/ols/ontologies/uo), and many others. By adopting controlled terms DUC affords more machine readibility and interpretation to further facilitate data findability and access.
 
