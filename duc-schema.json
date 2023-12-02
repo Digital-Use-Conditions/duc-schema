@@ -92,7 +92,8 @@
     },
     "lastUpdated": {
       "description": "Optional date this DUC profile was most recently updated in ISO 8601 format.",
-      "type": "date"
+      "type": "string",
+      "format": "date"
     },
     "assets": {
       "description": "Optional list of assets to which the conditions apply. Specify names, descriptions, references and URI to their asset object (for example DCAT).",
