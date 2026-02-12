@@ -1,71 +1,85 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Digital-Use-Conditions/duc-schema/blob/v1.0.0/duc-schema.json",
+  "$id": "https://github.com/Digital-Use-Conditions/duc-schema/blob/v1.1.0/duc-schema.json",
   "type": "object",
-  "required": [
-    "conditions"
-  ],
+  "title": "Digital Use Conditions (DUC) Profile Schema",
+  "description": "A JSON schema for a Digital Use Conditions (DUC) profile.",
   "properties": {
     "conditions": {
       "description": "A list of use conditions that apply to the information or data assets.",
       "type": "array",
       "minItems": 1,
       "items": {
-        "type": "object"
-      },
-      "required": [
-        "conditionTermLabel",
-        "rule",
-        "scope"
-      ],
-      "properties": {
-        "conditionTerm": {
-          "label": {
-            "description": "A human readable name of the vocabulary/ontology condition term, such as DUO ‘Disease specific research’.",
-            "type": "string"
+        "type": "object",
+        "properties": {
+          "conditionTerm": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "description": "A human readable name of the vocabulary/ontology condition term, such as DUO 'Disease specific research'.",
+                "type": "string"
+              },
+              "uri": {
+                "description": "A URI to the vocabulary/ontology term, such as DUO URI: 'http://purl.obolibrary.org/obo/DUO_0000007'.",
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
           },
-          "uri": {
-            "description": "A URI to the vocabulary/ontology term, such as DUO URI: ‘http://purl.obolibrary.org/obo/DUO_0000007’.",
+          "conditionParameter": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "description": "Human readable name of the vocabulary/ontology used as a parameter, such as Alzheimer's Disease, to apply on the conditionTerm.",
+                "type": "string"
+              },
+              "uri": {
+                "description": "Optional URI to the ontology term for the conditionParameter, such as a MONDO URI: 'http://purl.obolibrary.org/obo/MONDO_0004975'.",
+                "type": "string",
+                "format": "uri"
+              },
+              "value": {
+                "description": "Optional value for the conditionParameter if any.",
+                "type": [
+                  "string",
+                  "number"
+                ]
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "rule": {
+            "description": "The direction to interpret the condition term.",
             "type": "string",
-            "format": "uri"
-          }
-        },
-        "conditionParameter": {
-          "label": {
-            "description": "Optional human readable name of the vocabulary/ontology used as a parameter, such as Alzheimer's Disease, to apply on the conditionTerm.",
-            "type": "string"
+            "enum": [
+              "Obligatory",
+              "Permitted",
+              "Forbidden",
+              "No Requirement"
+            ]
           },
-          "uri": {
-            "description": "Optional URI to the ontology term for the conditionParameter, such as a MONDO URI: ‘http://purl.obolibrary.org/obo/MONDO_0004975’.",
+          "scope": {
+            "description": "A scope to state if this condition applies to all or part-of the data in the resource asset that this DUC profile is associated with (see 'resources' object).  Whole of Asset should be the default.",
             "type": "string",
-            "format": "uri"
-          },
-          "value": {
-            "description": "Optional value for the conditionParameter if any.",
-            "type": [
-              "string",
-              "number"
+            "enum": [
+              "Whole of asset",
+              "Part of asset"
             ]
           }
         },
-        "rule": {
-          "description": "The direction to interpret the condition term.",
-          "type": "string",
-          "enum": [
-            "Obligatory",
-            "Permitted",
-            "Forbidden",
-            "No Requirement"
-          ]
-        },
-        "scope": {
-          "description": "A scope to state if this condition applies to all or part-of the data in the resource asset that this DUC profile is associated with (see ‘resources’ object).  Whole of Asset should be the default.",
-          "type": "string",
-          "enum": [
-            "Whole of asset",
-            "Part of asset"
-          ]
-        }
+        "required": [
+          "conditionTermLabel",
+          "rule",
+          "scope"
+        ],
+        "additionalProperties": false
       }
     },
     "profileId": {
@@ -99,37 +113,38 @@
       "description": "Optional list of assets to which the conditions apply. Specify names, descriptions, references and URI to their asset object (for example DCAT).",
       "type": "array",
       "items": {
-        "type": "object"
-      },
-      "minItems": 1,
-      "uniqueItems": true,
-      "required": [
-        "assetName"
-      ],
-      "properties": {
-        "assetName": {
-          "description": "Required name of the asset.",
-          "type": "string"
-        },
-        "assetDescription": {
-          "description": "Optional description of the asset.",
-          "type": "string"
-        },
-        "assetReferences": {
-          "description": "Optional list of web links to external documents describing the asset(s) this profile applies to, such as publications.",
-          "type": "array",
-          "items": {
+        "type": "object",
+        "properties": {
+          "assetName": {
+            "description": "Required name of the asset.",
+            "type": "string"
+          },
+          "assetDescription": {
+            "description": "Optional description of the asset.",
+            "type": "string"
+          },
+          "assetReferences": {
+            "description": "Optional list of web links to external documents describing the asset(s) this profile applies to, such as publications.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            },
+            "uniqueItems": true
+          },
+          "assetURI": {
+            "description": "Optional URI for the asset catalogue-level object (for example a DCAT object).",
             "type": "string",
             "format": "uri"
-          },
-          "uniqueItems": true
+          }
         },
-        "assetURI": {
-          "description": "Optional URI for the asset catalogue-level object (for example a DCAT object).",
-          "type": "string",
-          "format": "uri"
-        }
-      }
+        "required": [
+          "assetName"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
     },
     "permissionMode": {
       "description": "Optional default interpretation for all unstated conditions.",
@@ -143,5 +158,46 @@
       "description": "Optional ISO 639-3 letter code for the language used in this DUC profile.",
       "type": "string"
     }
-  }
+  },
+  "required": [
+    "conditions"
+  ],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "profileName": "Test Profile",
+      "profileVersion": "0.1.0",
+      "creationDate": "2025-05-09",
+      "lastUpdated": "2025-05-09",
+      "permissionMode": "All unstated conditions are Forbidden",
+      "language": "eng",
+      "profileId": "https://duc.le.ac.uk/profiles/ad04c8aa-7226-4482-a4ba-2a3af353a697",
+      "ducVersion": "0.0.1",
+      "assets": [
+        {
+          "assetName": "Test asset",
+          "assetDescription": "One testing asset",
+          "assetReferences": [
+            "https://picsum.photos/"
+          ],
+          "assetUri": "https://picsum.photos/200/300"
+        }
+      ],
+      "conditions": [
+        {
+          "conditionTerm": {
+            "label": "Commercial Entity",
+            "uri": "http://example.com/condition/commercial-entity"
+          },
+          "rule": "Forbidden",
+          "scope": "Whole of asset",
+          "conditionParameter": {
+            "label": "Some condition parameter",
+            "uri": "http://example.com/condition/commercial-entity/parameter",
+            "value": "Forbidden outside of the EU"
+          }
+        }
+      ]
+    }
+  ]
 }
