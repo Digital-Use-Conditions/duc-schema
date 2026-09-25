@@ -9,6 +9,9 @@ Using this structure, simple or sophisticated sets of conditions can be designed
 - conditionTerm: General Research Use (DUO:0000042), rule: Permitted, scope: Whole of asset
 - conditionTerm: Time limit on use (DUO:0000025), rule: Obligated, scope: Whole of asset, conditionParameter: Month (UO:0000035), conditionParameterValue: 12
 
+## Publications:
+Jeanson, F., Gibson, S.J., Alper, P. et al. Getting your DUCs in a row - standardising the representation of Digital Use Conditions. Sci Data 11, 464 (2024). [https://doi.org/10.1038/s41597-024-03280-6](https://doi.org/10.1038/s41597-024-03280-6)
+
 ## Extending ontologies
 DUC can be used with either free text descriptions of use conditions or controlled vocabulary/ontology terms. 
 
